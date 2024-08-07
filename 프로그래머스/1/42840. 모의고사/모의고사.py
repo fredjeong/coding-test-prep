@@ -6,6 +6,7 @@ def solution(answers):
     first_score = 0
     second_score = 0
     third_score = 0
+    
     for i in range(len(answers)):
         first_index = i % len(first)
         second_index = i % len(second)
@@ -18,15 +19,9 @@ def solution(answers):
             third_score += 1
     
     scores = [first_score, second_score, third_score]
-    
-    if first_score > second_score and first_score == third_score:
-        answer = [1, 3]
-    elif first_score > third_score and first_score == second_score:
-        answer = [1, 2]
-    elif second_score > first_score and second_score == third_score:
-        answer = [2, 3]
-    elif first_score == second_score and second_score == third_score:
-        answer = [1, 2, 3]
-    else:
-        answer = [scores.index(max(scores)) + 1]
+    answer = []
+    for index, s in enumerate(scores):
+        if s == max(scores):
+            answer.append(index + 1)
+
     return answer
