@@ -13,3 +13,11 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 
 ### MySQL
 - Programmers Lv.1 진행 중
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Database
+|  |
+| ------- |
+| [1908-recyclable-and-low-fat-products](https://github.com/fredjeong/coding-test-prep/tree/master/1908-recyclable-and-low-fat-products) |
+<!---LeetCode Topics End-->
