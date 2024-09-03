@@ -26,32 +26,3 @@ def solution(book_time):
 
     answer = len(stack)
     return answer
-
-# ["14:10", "19:20"] # stack = [19:30]
-# ["14:20", "15:20"] # stack = [19:30, 15:30]
-# ["15:00", "17:00"] # stack = [19:30, 15:30, 17:10]
-# ["16:40", "18:20"] # stack = [19:30, 17:10, 18:30]
-# ["18:20", "21:20"] # stack = [19:30, 18:30, 21:30]
-
-
-
-
- # 객실 준비시간만 넣으면 된다 단 10분 더했을때 자정이 넘어가면 안됨 
-        # 입실시간이 준비시간 minimum보다 늦으면 교체
-        # 입실시간이 준비시간 minimum보다 빠르면 추가
-
-# ten_minutes_later = current + datetime.timedelta(minutes=10)
-
-#    # 우선 입실시간 순으로 정렬한다
-#    book_time = sorted(book_time, key=lambda x:x[0])
-#    
-#    # stack을 활용하자
-#    stack = []
-#    for booking in book_time:
-#        # 객실을 하나 더 사용해야 하는 경우
-#        
-#        # 기존 객실에 집어넣을 수 있는 경우
-#        if 
-#        stack.append(book)
-        
-    
