@@ -8,13 +8,7 @@ def solution(k, ranges):
             k = k * 3 + 1
         seq.append(k)
     n = len(seq)
-    # a = 33.3, b = 31.5라면
-    # a부터 n-b까지의 정적분을 수행해야 한다
     
-    # int(a)부터 int(a+1)까지의 일차함수, n-int(b)-1부터 n-int(b)까지의 일차함수
-    # 나머지는 최소 + 최대 * 1/2하면 된다
-    # 일차함수: y=(y2-y1)x + y1 - (y2-y1)x1
-    # int(a)와 int(a+1)가 만드는 일차함수에 a를 넣고 값을 구하고 그 값과 int(a+1) 사이의 정적분 계산
     answer = []
     for i in ranges:
         a = i[0]
@@ -41,12 +35,8 @@ def solution(k, ranges):
         
         for j in range(int(a)+1, int(b)-1):
             temp += (seq[j] + seq[j+1]) / 2
-        #print(f"Part 1: {part_1}, Part 2: {part_2}")
+
         answer.append(temp)
-        
-    # a == b인 경우, 등 고려
-    
-    #answer = []
     return answer
 
 
