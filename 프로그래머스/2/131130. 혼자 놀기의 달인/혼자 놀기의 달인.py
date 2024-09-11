@@ -16,7 +16,6 @@ def solution(cards):
                 arr.append(stack)
             break
         if visited[idx] == True:
-            #stack.append(idx+1)
             arr.append(stack)
             stack = []
             # 아직 False인 것 중에서 새로 열 박스 지정
@@ -46,26 +45,5 @@ def solution(cards):
         length.append(len(group))
     length.sort()
     answer = length[-1]*length[-2]
-#    answer = 1
-#    for group in arr:
-#        answer *= len(group)
+    
     return answer
-        
-        
-#    # i번 박스를 열어본다
-#    for i in range(1,num_box+1):
-#        # i번 박스가 이미 열려있다면 라운드를 종료한다
-#        if visited[cards[i-1]] = True:
-#            arr.append(stack)
-#            stack = []
-#            continue
-#        # i번 박스를 연다
-#        visited[i-1] = True
-#        stack.append(i)
-#        # i번 박스에 들어있는  
-#        cards[i-1]
-#    
-#    #while visited.count(False) > 0:
-#        
-#    answer = 0
-#    return answer
