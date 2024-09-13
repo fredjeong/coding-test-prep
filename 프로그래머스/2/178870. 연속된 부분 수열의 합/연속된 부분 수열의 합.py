@@ -13,7 +13,7 @@ def solution(sequence, k):
     start = 0   # 시작 인덱스
     end = 1     # 종료 인덱스
     
-    temp = deque(sequence[start:end+1]) # sequence의 길이가 3 이상일 때이다
+    temp = deque(sequence[start:end+1]) 
     total = sum(temp)
     temp_length = 2
     while total < k:
@@ -29,21 +29,6 @@ def solution(sequence, k):
     else:
         answer = [start, end]
 
-#    if total > k:
-#        while total > k:
-#            total -= temp[0]
-#            temp.popleft()
-#            start += 1
-#            temp_length -= 1
-#        if total == k:
-#            if total == k and (temp_length == 2 or temp_length == length):
-#                return [start, end]
-#            else:
-#                answer = [start, end]
-    
-    # 일단 세이브하고 길이를 더 줄일 수 있는지 보자
-    #answer = [start, end]
-    #print(temp)
     # 합이 k인 애들만 남았음
     # 다음 과정을 반복한다
     is_break = 0
@@ -67,10 +52,8 @@ def solution(sequence, k):
             temp.append(sequence[end])
             temp.popleft()
 
-        # 깎는 과정이 있어야 함
         if temp_length == 2 and total == k:
             return [start, end]
         elif total == k and temp_length < answer[1]-answer[0]+1:
             answer = [start, end]
-            #print(answer)
     return answer
