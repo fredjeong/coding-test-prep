@@ -1,5 +1,3 @@
-from collections import deque
-
 N = int(input())
 graph = [input().strip() for _ in range(N)]
 
