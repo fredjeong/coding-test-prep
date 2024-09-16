@@ -8,7 +8,7 @@ arr = []
 for _ in range(N):
     num = int(input())
     if num > K:
-        continue
+        break
     arr.append(num)
 
 count = 0
