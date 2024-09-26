@@ -8,7 +8,6 @@ string = deque(input().strip())
 
 count = 0
 stack = ""
-result = []
 while string:
     stack += string.popleft()
     if not string and stack:
@@ -21,12 +20,21 @@ while string:
     if len(stack)==3:
         if string[0]=="0":
             count += 1
-            stack = stack[1:]
+            if stack[2]=="0":
+                stack = stack[1:]
+            else:
+                stack = stack[2]
         else:
             if int(stack) <= 641:
                 count += 1
                 stack = ""
             else:
                 count += 1
-                stack = stack[2]
+                if stack[1]=="0":
+                    stack = stack[2]
+                else:
+                    if stack[2]=="0":
+                        stack = stack[1:]
+                    else:
+                        stack = stack[2]
 print(count)
