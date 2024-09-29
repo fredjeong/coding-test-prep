@@ -6,14 +6,17 @@ n = int(input())
 m = int(input())
 s = input().strip()
 
-target = "IO"*n + "I"
+cursor, count, result = 0, 0, 0
 
-count = 0
-for i in range(m-(2*n)):
-    if i==m-(2*n+1):
-        temp = s[i:]
-    else:
-        temp = s[i:i+(2*n+1)]
-    if temp==target:
+while cursor < (m-1):
+    if s[cursor:cursor + 3] == 'IOI':
         count += 1
-print(count)
+        cursor += 2
+        if count == n:
+            result += 1
+            count -= 1
+    else:
+        cursor += 1
+        count = 0
+
+print(result)
