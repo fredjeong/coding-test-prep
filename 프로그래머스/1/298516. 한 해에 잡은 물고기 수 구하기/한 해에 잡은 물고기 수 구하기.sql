@@ -1,3 +1,3 @@
-select count(*) as FISH_COUNT
-from FISH_INFO
-where year(TIME) = '2021'
+select count(*) as fish_count
+from fish_info
+where year(time) = '2021'
