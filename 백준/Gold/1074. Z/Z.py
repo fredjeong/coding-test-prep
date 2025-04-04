@@ -1,28 +1,10 @@
-import sys
-
-input = sys.stdin.readline
 N, r, c = map(int, input().split())
 
-answer = 0
+def sol(N, r, c):
 
-while N != 0:
-
-	N -= 1
-
-	if r < 2 ** N and c < 2 ** N:
-		answer += ( 2 ** N ) * ( 2 ** N ) * 0
-
-	elif r < 2 ** N and c >= 2 ** N: 
-		answer += ( 2 ** N ) * ( 2 ** N ) * 1
-		c -= ( 2 ** N )
+	if N == 0:
+		return 0
         
-	elif r >= 2 ** N and c < 2 ** N: 
-		answer += ( 2 ** N ) * ( 2 ** N ) * 2
-		r -= ( 2 ** N )
-        
-	else:
-		answer += ( 2 ** N ) * ( 2 ** N ) * 3
-		r -= ( 2 ** N )
-		c -= ( 2 ** N )
+	return 2*(r%2)+(c%2) + 4*sol(N-1, int(r/2), int(c/2))
 
-print(answer)
+print(sol(N, r, c))

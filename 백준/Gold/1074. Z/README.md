@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 31120 KB, 시간: 36 ms
+메모리: 108080 KB, 시간: 88 ms
 
 ### 분류
 
@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2024년 9월 17일 08:53:41
+2024년 12월 5일 00:55:22
 
 ### 문제 설명
 
@@ -24,13 +24,13 @@
 
 <p>다음 예는 2<sup>2</sup> × 2<sup>2</sup> 크기의 배열을 방문한 순서이다.</p>
 
-<p style="text-align:center"><img alt="" src="" style="width: 250px; height: 252px;"></p>
+<p style="text-align:center"><img alt="" src="https://u.acmicpc.net/adc7cfae-e84d-4d5c-af8e-ee011f8fff8f/Screen%20Shot%202020-12-02%20at%208.11.17%20AM.png" style="width: 250px; height: 252px;"></p>
 
 <p>N이 주어졌을 때, r행 c열을 몇 번째로 방문하는지 출력하는 프로그램을 작성하시오.</p>
 
 <p>다음은 N=3일 때의 예이다.</p>
 
-<p style="text-align:center"><img alt="" src="" style="width: 533px; height: 535px;"></p>
+<p style="text-align:center"><img alt="" src="https://u.acmicpc.net/d3e84bb7-9424-4764-ad3a-811e7fcbd53f/Screen%20Shot%202020-12-30%20at%2010.50.47%20PM.png" style="width: 533px; height: 535px;"></p>
 
 ### 입력 
 
