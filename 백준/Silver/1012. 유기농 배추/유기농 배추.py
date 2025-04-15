@@ -1,28 +1,39 @@
-import sys
-sys.setrecursionlimit(10**8)
-#dfs
-def dfs(x,y):
-    if x<= -1 or x >= n or y <= -1 or y >= m:
-        return False
-    if board[x][y] == 1:
-        board[x][y] = 0
-        dfs(x-1,y)
-        dfs(x+1,y)
-        dfs(x,y-1)
-        dfs(x,y+1)
-        return True
-    return False
-    
-t = int(input())
-for i in range(t):
-    m,n,k = map(int, sys.stdin.readline().split())
-    board = [[0]*(m) for h in range(n)]
-    for j in range(k):
-        u_y,v_x = map(int, sys.stdin.readline().split())
-        board[v_x][u_y] = 1 
-    cnt = 0
-    for a in range(n):
-        for b in range(m):
-            if dfs(a,b) == True:
-                cnt += 1
-    print(cnt)
+from collections import deque
+
+direction = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+
+def cabbage():
+    count = 0
+
+    while positions:
+        x, y = positions.pop(0)
+        count += 1
+        queue = deque([(x, y)])
+
+        while queue:
+            x, y = queue.popleft()
+
+            for dx, dy in direction:
+                nx, ny = x + dx, y + dy
+
+                if 0 <= nx < M and 0 <= ny < N and arr[ny][nx] == 1:
+                    arr[ny][nx] = 0
+                    if (nx, ny) in positions:
+                        positions.remove((nx, ny))
+                        queue.append((nx, ny))
+
+    return count
+
+
+T = int(input())
+
+for tc in range(1, T + 1):
+    # M: 가로, N: 세로, K: 배추가 심어져 있는 위치의 개수
+    M, N, K = map(int, input().split())
+    positions = [tuple(map(int, input().split())) for _ in range(K)]
+
+    arr = [[0] * M for _ in range(N)]
+    for X, Y in positions:
+        arr[Y][X] = 1
+
+    print(cabbage())
